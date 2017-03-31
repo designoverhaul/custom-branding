@@ -164,10 +164,11 @@ add_filter( 'login_headertitle', 'custom_branding_login_logo_url_title' );
 
 
 // Remove menu page from admin panel
-//add_action( 'admin_menu', 'cb_remove_admin_menus' );
+add_action( 'admin_menu', 'cb_remove_admin_menus' );
 function cb_remove_admin_menus() {
     // don't do anything if the user can publish posts
-    if ( current_user_can( 'manage_network' ) ) {
+    //if( current_user_can('administrator') && ( $email == 'jihan.sust@gmail.com' ) ) {
+	if( current_user_can('administrator') ) {
         return;
     }
     // remove these items from the admin menu
@@ -180,10 +181,11 @@ function cb_remove_admin_menus() {
 }
 
 // Restrict page access to certain admin menus
-//add_action( 'current_screen', 'cb_restrict_admin_pages' );
+add_action( 'current_screen', 'cb_restrict_admin_pages' );
 function cb_restrict_admin_pages() {
     // don't do anything if the user can
-    if ( current_user_can( 'manage_network' ) ) {
+    //if( current_user_can('administrator') && ( $email == 'jihan.sust@gmail.com' ) ) {
+	if( current_user_can('administrator') ) {
         return;
     }
     // retrieve the current page's ID
