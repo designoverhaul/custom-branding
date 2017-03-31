@@ -1,9 +1,8 @@
 /* Basic styles
 -------------------------------------------------*/
 #login h1 a, .login h1 a {
-	height:65px;
-	width:320px;
-	background-size: 320px 65px;
-	background-repeat: no-repeat;
-	padding-bottom: 30px;
+    height: 110px !important;
+    width: 320px !important;
+    background-size: 320px 147px !important;
 }
+
