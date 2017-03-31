@@ -134,16 +134,17 @@ function load_custom_wp_admin_style($hook) {
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
+//Register the stylesheets for the login form
+function cb_login_css() {
+	wp_enqueue_style( 'custom_wp_admin_css', plugins_url('css/login.css', __FILE__) );
+}
+add_action('login_head', 'cb_login_css');
+
 // Change the login logo
 function custom_branding_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
         background-image: url(<?php echo get_option('cb_text_field'); ?>);
-		height:65px;
-		width:320px;
-		background-size: 320px 65px;
-		background-repeat: no-repeat;
-		padding-bottom: 30px;
         }
     </style>
 <?php }
