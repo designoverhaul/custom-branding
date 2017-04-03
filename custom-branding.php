@@ -5,7 +5,7 @@ Description: Plugin for white labelling WordPress branding
 Plugin URI: https://github.com/designoverhaul/custom-branding
 Author: Jihan Ahmed
 Author URI: http://www.wpunmarked.com
-Version: 1.0.7
+Version: 1.0.8
 */
 
 if( ! class_exists( 'Smashing_Updater' ) ){
